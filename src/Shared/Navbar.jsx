@@ -1,13 +1,16 @@
 import React from 'react';
 import NabLogo from '../../src/assets/logo_white.png'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-      <div className="navbar bg-cyan-500 p-6">
+        <div className='md:mx-auto'>
+             <div className="navbar bg-cyan-700 p-6">
 
 
         {/* navbar start */}
   <div className="navbar-start">
+  {/* <div className=""> */}
     <div className="dropdown me-3">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -18,35 +21,35 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <img className='w-20' src={NabLogo} alt="" />
+    <Link to='/'><img className='w-20' src={NabLogo} alt="" /></Link>
+    
   </div>
 
 
 
   {/* navbar center */}
   <div className="navbar-center hidden lg:flex">
+  {/* <div className=" hidden lg:flex"> */}
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li tabIndex={0}>
-        <a>
-          Parent
-          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-        </a>
-        <ul className="p-2">
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
-        </ul>
-      </li>
-      <li><a>Item 3</a></li>
+     <Link className='mx-2 text-xl font-semibold text-white' to='/'>Home</Link>
+     <Link className='mx-2 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
+     <Link className='mx-2 text-xl font-semibold text-white' to='/'>My-Toys</Link>
+     <Link className='mx-2 text-xl font-semibold text-white' to='/'>Add-A-Toy</Link>
+     <Link className='mx-2 text-xl font-semibold text-white' to='/'>Blogs</Link>
     </ul>
   </div>
 
 
   {/* navbar end */}
   <div className="navbar-end">
-    <a className="btn">Get started</a>
+  {/* <div className=""> */}
+    <Link to='signIn' className="btn">Sign in</Link>
   </div>
 </div>
+
+        </div>
+
+     
     );
 };
 
