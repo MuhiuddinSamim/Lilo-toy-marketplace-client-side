@@ -6,7 +6,7 @@ const Footer = () => {
         <div className='bg-cyan-400'>
             <div>
                  <div className='text-center font-extrabold text-xl'>
-    <p>Copyright © 2023 - All right reserved by Lilo</p>
+    <p>Copyright © 2023 - All right reserved by Lilo.</p>
   </div>
             </div>
             <footer className="footer p-10   text-base-content">
@@ -20,12 +20,13 @@ const Footer = () => {
     <a className="link link-hover">Marketing</a> 
     <a className="link link-hover">Advertisement</a>
   </div> 
-  <div>
+  <div text-xl>
     <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a> 
-    <a className="link link-hover">Contact</a> 
-    <a className="link link-hover">Jobs</a> 
-    <a className="link link-hover">Press kit</a>
+  
+    <p className='text-2xl fond-bold'>Jon Doe</p>
+    <p> General Manager <span className='font-bold'>Lilo In Corp.</span></p>
+    <p> Contact us at: Lilo@gmail.com</p>
+    <p>+999 438 892 ,USA</p>
   </div> 
   <div>
     <span className="footer-title">Social</span> 
