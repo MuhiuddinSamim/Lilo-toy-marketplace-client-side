@@ -1,6 +1,7 @@
 import React from 'react';
 import NabLogo from '../../src/assets/logo_white.png'
 import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -31,11 +32,11 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
   {/* <div className=" hidden lg:flex"> */}
     <ul className="menu menu-horizontal px-1">
-     <Link className='mx-2 text-xl font-semibold text-white' to='/'>Home</Link>
-     <Link className='mx-2 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
-     <Link className='mx-2 text-xl font-semibold text-white' to='/'>My-Toys</Link>
-     <Link className='mx-2 text-xl font-semibold text-white' to='/'>Add-A-Toy</Link>
-     <Link className='mx-2 text-xl font-semibold text-white' to='/'>Blogs</Link>
+     <Link className='mx-4 text-xl link-hover font-semibold text-white' to='/'>Home</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/'>My-Toys</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/'>Add-A-Toy</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/'>Blogs</Link>
     </ul>
   </div>
 
@@ -43,7 +44,7 @@ const Navbar = () => {
   {/* navbar end */}
   <div className="navbar-end">
   {/* <div className=""> */}
-    <Link to='signIn' className="btn">Sign in</Link>
+    <Link to='/login' className="btn">Log in</Link>
   </div>
 </div>
 
