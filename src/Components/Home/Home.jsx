@@ -8,20 +8,21 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper";
 
 
-import img from '../../assets/chris-hardy-H5Ffv4I5ZMI-unsplash.jpg'
-import img1 from '../../assets/kid2.avif'
-import img2 from '../../assets/kid3.jpg'
-import img3 from '../../assets/ryan-wallace-5jtwRBB3CdI-unsplash.jpg'
-import img4 from '../../assets/kelly-sikkema-Z9AU36chmQI-unsplash.jpg'
-import img5 from '../../assets/ravi-palwe-YBj5U27M5hU-unsplash.jpg'
-import img6 from '../../assets/baby-natur-7CA5GfekZ_0-unsplash.jpg'
+import img from '../../assets/pexels-markus-spiske-242200.jpg'
+import img1 from '../../assets/pexels-rahul-pandit-1863235.jpg'
+import img2 from '../../assets/pexels-mike-bird-132539.jpg'
+import img3 from '../../assets/pexels-revac-fil.jpg'
+import img4 from '../../assets/pexels-the-lazy-artist-gallery-2527931.jpg'
+import img5 from '../../assets/pexels-omar-ramadan-6642328.jpg'
+import img6 from '../../assets/pexels-ryutaro-tsukata-5472259.jpg'
 
 const Home = () => {
     return (
         <div className="md:flex mx-20">
-            <div className="md:w-2/4 sm:py-20 md:py-48">
-                <h3 className=" text-5xl font-bold text-yellow-500 py-4 ">Lilo Lets Grow with Together</h3>
-            <p>Building a magnificent shop is a child’s play! Lilo comes with an amazing set of remarkable options and easily customizable shop lists & singles that will help you start selling your beautiful items right now!</p>
+            <div className="md:w-2/4 sm:py-20 md:py-16">
+                <h3 className=" text-3xl font-bold text-yellow-500  "> Lets Grow with Lilo.</h3>
+                <h2 className="text-5xl text-fuchsia-700 font-bold py-6"> Biggest Car,bus & truck Showpiece </h2>
+            <p>Lilo is a toy shop that is dedicated to providing children with the best possible toy Showpiece. We have a wide variety of toy cars to choose from, including classic cars, sports cars, trucks,jeep,bus and more. We also have a variety of accessories to go along with our toys, such as garages, tracks, and playsets.</p>
             </div>
             <div className="md:w-2/4 m-5">
                 <Swiper

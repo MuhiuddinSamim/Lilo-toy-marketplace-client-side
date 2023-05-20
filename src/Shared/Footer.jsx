@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='bg-cyan-400'>
             <div>
-                 <div className='text-center font-extrabold text-xl'>
+                 <div className='text-center font-extrabold text-xl py-10'>
     <p>Copyright © 2023 - All right reserved by Lilo.</p>
   </div>
             </div>
