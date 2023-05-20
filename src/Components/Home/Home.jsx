@@ -15,10 +15,13 @@ import img3 from '../../assets/pexels-revac-fil.jpg'
 import img4 from '../../assets/pexels-the-lazy-artist-gallery-2527931.jpg'
 import img5 from '../../assets/pexels-omar-ramadan-6642328.jpg'
 import img6 from '../../assets/pexels-ryutaro-tsukata-5472259.jpg'
+import GalleryImg from "./GalleryImg";
 
 const Home = () => {
     return (
-        <div className="md:flex mx-20">
+        
+        <div>
+          <div className="md:flex mx-20">
             <div className="md:w-2/4 sm:py-20 md:py-16">
                 <h3 className=" text-3xl font-bold text-yellow-500  "> Lets Grow with Lilo.</h3>
                 <h2 className="text-5xl text-fuchsia-700 font-bold py-6"> Biggest Car,bus & truck Showpiece </h2>
@@ -66,14 +69,14 @@ const Home = () => {
          
       </Swiper>
             </div>
-
+          
         </div>
-
-
-     
-     
-    
-    );
+        <div>
+          <h2 className="text-5xl text-center text-fuchsia-700 font-bold py-10 ">Here is Our Collection</h2>
+          <GalleryImg></GalleryImg>
+        </div>
+        </div>
+       );
 };
 
 export default Home;
