@@ -4,6 +4,7 @@ import loginImg from '../../assets/2942004.jpg'
 
 
 const SignUp = () => {
+
     const [success,setSuccess]=useState('');
     const[error,setError]=useState('');
 
@@ -22,6 +23,18 @@ const SignUp = () => {
             return;
         }
         console.log(name,photo,email,password)
+        // createUser(email,password)
+        //   .then((userCredential) => {
+        //     const user = userCredential.user;
+        //     console.log(user);
+        //     setSuccess('Congratulation');
+        //     form.reset();
+
+        // })
+        // .catch((error) => {
+        //     const errorCode = error.code;
+        //     const errorMessage = error.message;
+        // });
 
     }
 
@@ -56,7 +69,7 @@ const SignUp = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" name='email' placeholder="email" required className="input input-bordered" />
+          <input type="email" name='email' placeholder="email" required className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">

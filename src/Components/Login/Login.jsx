@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import loginImg from '../../assets/Data_security_05.jpg'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+
     const [success,setSuccess]=useState('');
     const[error,setError]=useState('');
 
@@ -19,6 +21,7 @@ const Login = () => {
             setError('Minimum six characters, at least one letter, one number and one special character:');
             return;
         }
+        
 
     }
 
