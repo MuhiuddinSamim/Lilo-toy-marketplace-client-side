@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NabLogo from '../../src/assets/logo_white.png'
 import { Link } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
+import { AuthContext } from '../Provider/AuthProviders';
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext);
+  console.log(user?.email)
+
+
+
+
+
+
+const handlelogOut=()=>{
+     logOut()
+        .then(()=>{})
+        .catch(error=>console.log(error))
+
+  }
+
+
+
+
     return (
         <div className='md:mx-auto'>
              <div className="navbar bg-cyan-700 p-6">
@@ -44,7 +63,18 @@ const Navbar = () => {
   {/* navbar end */}
   <div className="navbar-end">
   {/* <div className=""> */}
+ {
+  user ? 
+    <div className="tooltip flex " data-tip={user.displayName}>
+  <img src={user.photoURL} className='w-8 mx-2  rounded-lg'  />
+  <Link onClick={handlelogOut} to='/login' className="btn">Log Out</Link>
+</div>
+    :
     <Link to='/login' className="btn">Log in</Link>
+
+ }
+  
+
   </div>
 </div>
 

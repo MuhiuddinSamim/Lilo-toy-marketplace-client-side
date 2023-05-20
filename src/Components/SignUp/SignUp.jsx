@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import loginImg from '../../assets/2942004.jpg'
-
+import { AuthContext } from '../../Provider/AuthProviders';
+import google from '../../assets/google-signin-button.png'
 
 const SignUp = () => {
+  const {createUser,signInGoogle}=useContext(AuthContext)
 
     const [success,setSuccess]=useState('');
     const[error,setError]=useState('');
@@ -23,20 +25,31 @@ const SignUp = () => {
             return;
         }
         console.log(name,photo,email,password)
-        // createUser(email,password)
-        //   .then((userCredential) => {
-        //     const user = userCredential.user;
-        //     console.log(user);
-        //     setSuccess('Congratulation');
-        //     form.reset();
-
-        // })
-        // .catch((error) => {
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
-        // });
+       createUser(email,password)
+       .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user)
+          setSuccess('Congratulation')
+          form.reset();
+        })
+        .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage)
+        console.log(errorMessage)
+      });
 
     }
+
+    const logInWithGoogle=()=>{
+      signInGoogle()
+      .then((result) => {
+       const user = result.user;
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+      });
+      // console.log('hello')
+     }
 
 
 
@@ -82,6 +95,9 @@ const SignUp = () => {
         <div className="form-control mx-auto mt-6">
           <button className="btn btn-primary w-24">Sign up</button>
         </div>
+        <div className="divider">OR</div>
+        <div onClick={logInWithGoogle} className='mx-auto' ><img className='w-72' src={google} alt="" /></div>
+
         <div className="text-grey-dark text-center mt-6">
             <p>Already Have an Account?  
             <Link to='/login' className="no-underline link-hover border-b text-xl text-violet-500 font-bold">
