@@ -66,7 +66,7 @@ const handlelogOut=()=>{
  {
   user ? 
     <div className="tooltip flex " data-tip={user.displayName}>
-  <img src={user.photoURL} className='w-8 mx-2  rounded-lg'  />
+  <img src={user?.photoURL} className='w-8 mx-2  rounded-lg'  />
   <Link onClick={handlelogOut} to='/login' className="btn">Log Out</Link>
 </div>
     :
