@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import NabLogo from '../../src/assets/logo_white.png'
+import l from '../assets/attachment_94636076 (1).jpeg'
 import { Link } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { AuthContext } from '../Provider/AuthProviders';
@@ -43,6 +44,7 @@ const handlelogOut=()=>{
     </div>
     <Link to='/'><img className='w-20' src={NabLogo} alt="" /></Link>
     
+    
   </div>
 
 
@@ -54,7 +56,7 @@ const handlelogOut=()=>{
      <Link className='mx-4 text-xl link-hover font-semibold text-white' to='/'>Home</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/'>My-Toys</Link>
-     <Link className='mx-4 text-xl font-semibold text-white' to='/'>Add-A-Toy</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/addToy'>Add-A-Toy</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/'>Blogs</Link>
     </ul>
   </div>
