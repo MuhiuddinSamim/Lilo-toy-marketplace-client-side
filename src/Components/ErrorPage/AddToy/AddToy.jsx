@@ -16,9 +16,22 @@ const AddToy = () => {
         const details=form.description.value;
 
         const addedToy={seller_name,seller_email,toy_name,sub_category,photo_url,price,availability,rating,details}
+         
+        fetch('http://localhost:5000/addtoys',{
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(addedToy),
+    })
+        .then(res=>res.json())
+        .then(res=>console.log(res))
+        .catch((err)=>{
+            console.error(err)
+        })
 
-        console.log( addedToy)
-
+        // console.log( addedToy)
+        form.reset();
     }
 
 

@@ -15,9 +15,9 @@ import Img5 from '../../gallery-img/g15.jpg'
 const GalleryImg = () => {
     return (
         <div className='grid md:grid-cols-3 lg:grid-cols-4 gap-6 mx-12 my-20'>
-            <img src={Img1} alt="" />
-            <img src={Img2} alt="" />
             <img src={Img4} alt="" />
+            <img src={Img2} alt="" />
+            <img src={Img1} alt="" />
             <img src={Img5} alt="" />
             <img src={Img6} alt="" />
             <img src={Img7} alt="" />
