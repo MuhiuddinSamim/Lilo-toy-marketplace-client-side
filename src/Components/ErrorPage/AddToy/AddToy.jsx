@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {  useState } from 'react';
 
 const AddToy = () => {
+  const[success,setSuccess]=useState();
 
     const handleAddToy=(event)=>{
         event.preventDefault();
@@ -32,6 +33,7 @@ const AddToy = () => {
 
         // console.log( addedToy)
         form.reset();
+        setSuccess('Congratulation')
     }
 
 
@@ -86,7 +88,6 @@ const AddToy = () => {
     <option value="Bus" />
     <option value="Car" />
     <option value="Jeep" />
-    <option value="Antique" />
   </datalist>
 </div>
          {/* <div className="form-control md:w-1/2">
@@ -118,12 +119,22 @@ const AddToy = () => {
              </label>
             <input type="number" name="availability" required placeholder="Available quantity" className="input input-bordered" min="1" />
          </div>
-          <div className="form-control md:w-1/2">
-         <label className="label">
-            <span className="label-text">Rating</span>
-             </label>
-            <input type="number" name="rating" required placeholder="Rating" className="input input-bordered" min="1" max='5' />
-         </div>
+        <div className="form-control md:w-1/2">
+  <label className="label">
+    <span className="label-text">Rating</span>
+  </label>
+  <input
+    type="number"
+    name="rating"
+    required
+    placeholder="Rating"
+    className="input input-bordered"
+    min="1"
+    max="5"
+    step="0.1"
+  />
+</div>
+
 
       </div>
        <div className="form-control">
@@ -136,7 +147,7 @@ const AddToy = () => {
         <div className="form-control w-24 mx-auto my-auto">
           <button className="btn btn-primary ">Submit</button>
         </div>
-      
+      <p>{success}</p>
        </form>
         </div>
     );
