@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebage.config';
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 
 
@@ -24,6 +24,10 @@ const signInGoogle=()=>{
    return signInWithPopup(auth, provider);
 
 }
+  const logIn=(email,password)=>{
+        setLoading(true);
+        return signInWithEmailAndPassword(auth,email,password)
+    }
   const logOut =()=>{
         return signOut(auth)
     }
@@ -46,6 +50,7 @@ const signInGoogle=()=>{
 const authInfo={
     user,
     loading,
+    logIn,
     createUser,
     signInGoogle,
     logOut

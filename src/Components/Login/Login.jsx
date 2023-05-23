@@ -1,8 +1,11 @@
-import React, {  useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import loginImg from '../../assets/Data_security_05.jpg'
 import { Link } from 'react-router-dom';
 
+import { AuthContext } from '../../Provider/AuthProviders';
+
 const Login = () => {
+  const {user,logIn}=useContext(AuthContext)
 
 
     const [success,setSuccess]=useState('');
@@ -21,6 +24,17 @@ const Login = () => {
             setError('Minimum six characters, at least one letter, one number and one special character:');
             return;
         }
+           logIn(email,password)
+        .then((userCredential) => { 
+         const LoggedUser = userCredential.user;
+         console.log(LoggedUser)
+          setSuccess('Login completed!');
+            form.reset();
+      })
+           .catch((error) => {
+          const errorMessage = error.message;
+          setError(errorMessage);
+        });
         
 
     }

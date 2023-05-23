@@ -57,7 +57,7 @@ const handlelogOut=()=>{
      <Link className='mx-4 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/'>My-Toys</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/addToy'>Add-A-Toy</Link>
-     <Link className='mx-4 text-xl font-semibold text-white' to='/'>Blogs</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/blogs'>Blogs</Link>
     </ul>
   </div>
 
