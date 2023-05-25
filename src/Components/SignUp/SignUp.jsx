@@ -1,20 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext,} from 'react';
 import { Link } from 'react-router-dom';
 import loginImg from '../../assets/2942004.jpg'
 import { AuthContext } from '../../Provider/AuthProviders';
 import google from '../../assets/google-signin-button.png'
+import Swal from 'sweetalert2';
+
 
 const SignUp = () => {
   const {createUser,signInGoogle}=useContext(AuthContext)
 
-    const [success,setSuccess]=useState('');
-    const[error,setError]=useState('');
+    // const [success,setSuccess]=useState('');
+    // const[error,setError]=useState('');
 
 
     const handleSignUp=(event)=>{
         event.preventDefault();
-        setError('');
-       setSuccess('');
+        // setError('');
+      //  setSuccess('');
         const form=event.target;
         const name=form.name.value;
         const photo=form.photo.value;
@@ -29,13 +31,13 @@ const SignUp = () => {
        .then((userCredential) => {
           const user = userCredential.user;
           console.log(user)
-          setSuccess('Congratulation')
+           Swal.fire('congratulation');
           form.reset();
         })
         .catch((error) => {
         const errorMessage = error.message;
-        setError(errorMessage)
-        console.log(errorMessage)
+        Swal.fire(errorMessage)
+        // console.log(errorMessage)
       });
 
     }
@@ -102,8 +104,8 @@ const SignUp = () => {
             <p>Already Have an Account?  
             <Link to='/login' className="no-underline link-hover border-b text-xl text-violet-500 font-bold">
                  Log In</Link>.</p>
-                  <p className='text-red-500'>{error}</p>
-                 <p className='text-primary text-2xl'>{success}</p>
+                  {/* <p className='text-red-500'>{error}</p> */}
+                 {/* <p className='text-primary text-2xl'>{success}</p> */}
          
         </div>
       </div>

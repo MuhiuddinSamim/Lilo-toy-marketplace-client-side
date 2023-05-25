@@ -1,7 +1,11 @@
-import React, {  useState } from 'react';
+import React, {  useContext, useState } from 'react';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../../Provider/AuthProviders';
+
 
 const AddToy = () => {
-  const[success,setSuccess]=useState();
+  // const[success,setSuccess]=useState();
+  const {user}=useContext(AuthContext)
 
     const handleAddToy=(event)=>{
         event.preventDefault();
@@ -14,9 +18,10 @@ const AddToy = () => {
         const price=form.price.value;
         const  availability=form.availability.value;
         const rating=form.rating.value;
+        const posted_by=form.posted_by.value;
         const details=form.description.value;
 
-        const addedToy={seller_name,seller_email,toy_name,sub_category,photo_url,price,availability,rating,details}
+        const addedToy={seller_name,seller_email,toy_name,sub_category,photo_url,price,availability,rating,posted_by,details}
          
         fetch('http://localhost:5000/addtoys',{
       method: "POST", // or 'PUT'
@@ -33,7 +38,7 @@ const AddToy = () => {
 
         // console.log( addedToy)
         form.reset();
-        setSuccess('Congratulation')
+         Swal.fire('Congratulation,added to database')
     }
 
 
@@ -143,11 +148,17 @@ const AddToy = () => {
           </label>
           <input type="text" name='description' placeholder="Detail description" required className="input input-bordered" />
         </div>  
+         <div className="form-control">
+          <label className="label">
+            <span className="label-text">Posted By</span>
+          </label>
+          <input type="text" name='posted_by' defaultValue={user.email} placeholder="Posted-by" required className="input input-bordered" />
+        </div>  
       </div>
         <div className="form-control w-24 mx-auto my-auto">
           <button className="btn btn-primary ">Submit</button>
         </div>
-      <p>{success}</p>
+      {/* <p>{success}</p> */}
        </form>
         </div>
     );

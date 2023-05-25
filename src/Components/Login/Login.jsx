@@ -1,6 +1,7 @@
 import React, {  useContext, useState } from 'react';
 import loginImg from '../../assets/Data_security_05.jpg'
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { AuthContext } from '../../Provider/AuthProviders';
 
@@ -8,14 +9,14 @@ const Login = () => {
   const {user,logIn}=useContext(AuthContext)
 
 
-    const [success,setSuccess]=useState('');
-    const[error,setError]=useState('');
+    // const [success,setSuccess]=useState('');
+    // const[error,setError]=useState('');
 
 
        const handleLogIn=(event)=>{
         event.preventDefault();
-        setError('');
-       setSuccess('');
+      //   setError('');
+      //  setSuccess('');
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
@@ -28,12 +29,12 @@ const Login = () => {
         .then((userCredential) => { 
          const LoggedUser = userCredential.user;
          console.log(LoggedUser)
-          setSuccess('Login completed!');
+           Swal.fire('Login completed!');
             form.reset();
       })
            .catch((error) => {
           const errorMessage = error.message;
-          setError(errorMessage);
+           Swal.fire(errorMessage);
         });
         
 
@@ -73,8 +74,8 @@ const Login = () => {
             <p>   New to Lilo? 
             <Link to='/signUp' className="no-underline link-hover border-b text-xl text-violet-500 font-bold">
                  Sign up</Link>.</p>
-                 <p className='text-red-500'>{error}</p>
-                 <p className='text-primary text-2xl'>{success}</p>
+                 {/* <p className='text-red-500'>{error}</p>
+                 <p className='text-primary text-2xl'>{success}</p> */}
          
         </div>
       </div>

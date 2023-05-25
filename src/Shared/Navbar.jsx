@@ -7,7 +7,7 @@ import { AuthContext } from '../Provider/AuthProviders';
 
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext);
-  console.log(user?.email)
+  // console.log(user?.email)
 
 
 
@@ -20,9 +20,6 @@ const handlelogOut=()=>{
         .catch(error=>console.log(error))
 
   }
-
-
-
 
     return (
         <div className='md:mx-auto'>
@@ -55,7 +52,7 @@ const handlelogOut=()=>{
     <ul className="menu menu-horizontal px-1">
      <Link className='mx-4 text-xl link-hover font-semibold text-white' to='/'>Home</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
-     <Link className='mx-4 text-xl font-semibold text-white' to='/'>My-Toys</Link>
+     <Link className='mx-4 text-xl font-semibold text-white' to='/myblogs'>My-Toys</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/addToy'>Add-A-Toy</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/blogs'>Blogs</Link>
     </ul>
@@ -67,8 +64,8 @@ const handlelogOut=()=>{
   {/* <div className=""> */}
  {
   user ? 
-    <div className="tooltip flex " data-tip={user.displayName}>
-  <img src={user?.photoURL} className='w-8 mx-2  rounded-lg'  />
+    <div className="tooltip flex " data-tip={user.email}>
+  <img src={user.photoURL} className='w-8 mx-2  rounded-lg'  />
   <Link onClick={handlelogOut} to='/login' className="btn">Log Out</Link>
 </div>
     :
