@@ -16,6 +16,7 @@ import img4 from '../../assets/pexels-the-lazy-artist-gallery-2527931.jpg'
 import img5 from '../../assets/pexels-omar-ramadan-6642328.jpg'
 import img6 from '../../assets/pexels-ryutaro-tsukata-5472259.jpg'
 import GalleryImg from "./GalleryImg";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
     return (
@@ -75,6 +76,8 @@ const Home = () => {
           <h2 className="text-5xl text-center text-fuchsia-700 font-bold py-10 ">Here is Our Collection</h2>
           <GalleryImg></GalleryImg>
         </div>
+        <Newsletter></Newsletter>
+
         </div>
        );
 };
