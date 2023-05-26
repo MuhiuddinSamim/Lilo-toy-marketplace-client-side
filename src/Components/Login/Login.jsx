@@ -1,13 +1,15 @@
 import React, {  useContext, useState } from 'react';
 import loginImg from '../../assets/Data_security_05.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 import { AuthContext } from '../../Provider/AuthProviders';
 
 const Login = () => {
-  const {user,logIn}=useContext(AuthContext)
-
+  const {user,logIn}=useContext(AuthContext);
+    const location=useLocation();
+    const Navigate=useNavigate();
+    const from=location.state?.from?.pathname || '/'
 
     // const [success,setSuccess]=useState('');
     // const[error,setError]=useState('');
@@ -31,6 +33,7 @@ const Login = () => {
          console.log(LoggedUser)
            Swal.fire('Login completed!');
             form.reset();
+            Navigate(from ,{replace:true})
       })
            .catch((error) => {
           const errorMessage = error.message;

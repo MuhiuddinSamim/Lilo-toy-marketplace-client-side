@@ -11,6 +11,7 @@ import AllToys from "../Components/AllToys/AllToys";
 import Blogs from "../Blogs";
 import ToyDetails from "../Components/toy details/ToyDetails";
 import MyToys from "../Shared/MyToys/MyToys";
+import PrivateRoute from "../Shared/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -45,12 +46,13 @@ const router = createBrowserRouter([
   ,
    {
      path:'/ToyDetails/:id',
-        element:<ToyDetails></ToyDetails>,
+        element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/ToyDetails/${params.id}`)  
-  }, {
-     path:'/myblogs',
-        element:<MyToys></MyToys>
+          fetch(`https://lilo-server-muhiuddinsamim.vercel.app/ToyDetails/${params.id}`)  
+  }, 
+  {
+     path:'/myToys',
+    element:<MyToys></MyToys>
   }
 
     ]

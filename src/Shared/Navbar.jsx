@@ -52,8 +52,8 @@ const handlelogOut=()=>{
     <ul className="menu menu-horizontal px-1">
      <Link className='mx-4 text-xl link-hover font-semibold text-white' to='/'>Home</Link>
      <Link className='mx-4 text-xl font-semibold text-white' to='/allToys'>All-Toys</Link>
-     <Link className='mx-4 text-xl font-semibold text-white' to='/myblogs'>My-Toys</Link>
-     <Link className='mx-4 text-xl font-semibold text-white' to='/addToy'>Add-A-Toy</Link>
+    { user && <Link className='mx-4 text-xl font-semibold text-white' to='/myToys'>My-Toys</Link>}
+      {user && <Link className='mx-4 text-xl font-semibold text-white' to='/addToy'>Add-A-Toy</Link> }
      <Link className='mx-4 text-xl font-semibold text-white' to='/blogs'>Blogs</Link>
     </ul>
   </div>

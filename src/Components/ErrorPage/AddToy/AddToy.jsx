@@ -23,7 +23,7 @@ const AddToy = () => {
 
         const addedToy={seller_name,seller_email,toy_name,sub_category,photo_url,price,availability,rating,posted_by,details}
          
-        fetch('http://localhost:5000/addtoys',{
+        fetch('https://lilo-server-muhiuddinsamim.vercel.app/addtoys',{
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
